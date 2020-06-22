@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOCTYPE</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  z-index: 1;
+  height: 100vh;
+  justify-content: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.paint {
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  cursor: url('./img/pencil.png'), auto;
+}
+
+.tools {
+  margin-left: 12px;
+}
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.color {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+h3 {
+  font-size: 12px;
+  font-family: 'Arial';
+  margin: 0;
+  margin-right: 6px;
+}
+input[type='color'] {
+  -webkit-appearance: none;
+  border: none;
+  width: 18px;
+  height: 18px;
+  outline: none;
+}
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type='color']::-webkit-color-swatch {
+  border: none;
+}
+.eraser {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.eraser-elem {
+  width: 18px;
+  height: 18px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: #fff;
+}
+.erase-btn {
+  height: 20px;
+  line-height: 20px;
+  padding: 0 8px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  background-color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="row">
+          <canvas id="paint" class="paint" width="400" height="400">
+          </canvas>
+          <div class="tools">
+            <div class="color-picker">
+              <h3 class="color-picker-title">Цвет</h3>
+              <input
+                class="color js-color"
+                type="color"
+                value="#000000"
+              />
+            </div>
+            <div class="eraser">
+              <h3 class="eraser-title">Ластик</h3>
+              <div class="eraser-elem js-eraser-elem"></div>
+            </div>
+            <div class="erase">
+              <button class="erase-btn js-erase-btn">Очистить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<script src="node.js"></script>
+</body> 
+</html>
